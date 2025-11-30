@@ -1,0 +1,116 @@
+:root {
+  /* Serene, Earthy Palette (No Purple) */
+  --color-bg: 40 20% 97%; /* Creamy Off-white */
+  --color-fg: 200 10% 15%; /* Charcoal */
+  --color-primary: 160 40% 20%; /* Deep Forest Green */
+  --color-primary-light: 160 30% 30%;
+  --color-secondary: 150 20% 92%; /* Sage Mist */
+  --color-accent: 25 70% 60%; /* Terracotta */
+  --color-accent-hover: 25 75% 55%;
+  --color-danger: 0 60% 60%;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+body {
+  background-color: hsl(var(--color-bg));
+  color: hsl(var(--color-fg));
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Utility Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-primary) / 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--color-primary) / 0.4);
+}
+
+/* Skeleton Loading */
+.skeleton {
+  background: linear-gradient(90deg, hsl(var(--color-secondary)) 25%, hsl(var(--color-bg)) 50%, hsl(var(--color-secondary)) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-lg);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Custom Components */
+.btn-primary {
+  background-color: hsl(var(--color-primary));
+  color: white;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: hsl(var(--color-primary-light));
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-accent {
+  background-color: hsl(var(--color-accent));
+  color: white;
+  transition: all 0.3s ease;
+}
+.btn-accent:hover {
+  background-color: hsl(var(--color-accent-hover));
+  transform: scale(1.02);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.text-balance {
+  text-wrap: balance;
+}

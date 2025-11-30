@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo | Your Thoughts, Untangled</title>
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.10/tailwindcss.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss" data-teda="tailwind-apply">
+    @layer components {
+      .display-font { font-family: 'Playfair Display', serif; }
+      .body-font { font-family: 'Inter', sans-serif; }
+      .container-custom { @apply max-w-7xl mx-auto px-6 lg:px-8; }
+    }
+  </style>
+</head>
+<body class="body-font text-[hsl(var(--color-fg))]">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-[hsl(var(--color-bg)/0.8)] backdrop-blur-md border-b border-black/5">
+    <div class="container-custom flex justify-between items-center h-20">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 text-[hsl(var(--color-primary))] group-hover:scale-110 transition-transform">
+           <img src="logo.svg" alt="Echo Logo" class="w-full h-full">
+        </div>
+        <span class="display-font font-semibold text-xl tracking-tight">Echo</span>
+      </a>
+      <div class="hidden md:flex gap-8 items-center text-sm font-medium opacity-80">
+        <a href="#features" class="hover:text-[hsl(var(--color-primary))] transition-colors">Features</a>
+        <a href="#philosophy" class="hover:text-[hsl(var(--color-primary))] transition-colors">Philosophy</a>
+        <a href="app.html" class="btn-primary px-6 py-2.5 rounded-full shadow-lg">Open App</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section (Asymmetrical & Artistic) -->
+  <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <div class="container-custom relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+        
+        <!-- Text Content -->
+        <div class="lg:w-3/5 space-y-8 animate-fade-up">
+          <h1 class="display-font text-5xl md:text-7xl lg:text-8xl font-medium leading-[0.95] text-balance">
+            Your thoughts, <br>
+            <span class="italic text-[hsl(var(--color-primary))]">untangled.</span>
+          </h1>
+          <p class="text-xl md:text-2xl opacity-70 max-w-xl font-light leading-relaxed">
+            Echo is a sanctuary for your mind. A private, intelligent journal that helps you find meaning in the noise of everyday life.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="app.html" class="btn-primary text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-2xl flex items-center gap-3 group">
+              Start Writing
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#about" class="px-8 py-4 rounded-full border border-black/10 hover:bg-black/5 transition-colors font-medium">
+              Learn more
+            </a>
+          </div>
+          <p class="text-sm opacity-50 flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Free. Local-first. No login required.
+          </p>
+        </div>
+
+        <!-- Visual Abstract (No generic screenshot) -->
+        <div class="lg:w-2/5 relative">
+           <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[hsl(var(--color-accent))] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+           <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[hsl(var(--color-primary))] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float delay-200"></div>
+           
+           <!-- Floating Card UI Element -->
+           <div class="relative bg-white/80 backdrop-blur-xl border border-white/50 p-8 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500 cursor-default">
+             <div class="flex items-center gap-3 mb-6">
+               <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-serif italic">Me</div>
+               <div>
+                 <div class="text-sm font-semibold">Evening Reflection</div>
+                 <div class="text-xs opacity-50">Just now</div>
+               </div>
+             </div>
+             <p class="font-serif text-xl leading-relaxed mb-4 text-gray-700">
+               "Today felt overwhelming, but writing it down made the pieces fit together. I realized that my anxiety was just excitement in disguise..."
+             </p>
+             <div class="flex items-center gap-2 text-xs font-medium text-[hsl(var(--color-primary))]">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                AI Insight available
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Philosophy / "Features" (Magazine Layout) -->
+  <section id="philosophy" class="py-24 bg-white">
+    <div class="container-custom">
+      
+      <!-- Block 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-16 mb-32">
+        <div class="md:w-1/2">
+           <h2 class="display-font text-4xl md:text-5xl mb-6">Privacy isn't a setting.<br>It's our foundation.</h2>
+           <p class="text-lg opacity-70 leading-relaxed mb-8">
+             Your deepest thoughts shouldn't be on a cloud server. Echo is built <strong class="text-[hsl(var(--color-fg))]">local-first</strong>. 
+             Everything you write stays in your browser's secure storage. We can't read your journal even if we wanted to.
+           </p>
+           <ul class="space-y-4">
+             <li class="flex items-center gap-3 opacity-80">
+               <svg class="w-6 h-6 text-[hsl(var(--color-primary))]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+               No tracking cookies
+             </li>
+             <li class="flex items-center gap-3 opacity-80">
+               <svg class="w-6 h-6 text-[hsl(var(--color-primary))]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+               Zero-knowledge architecture
+             </li>
+           </ul>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+           <div class="relative w-full aspect-square max-w-md bg-[hsl(var(--color-secondary))] rounded-full overflow-hidden flex items-center justify-center">
+              <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519791883288-dc8bd696e667?auto=format&fit=crop&q=80')] bg-cover opacity-50 mix-blend-overlay"></div>
+              <span class="display-font text-9xl text-white opacity-20 font-bold mix-blend-overlay">SECURE</span>
+           </div>
+        </div>
+      </div>
+
+      <!-- Block 2 (Reverse) -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-16">
+        <div class="md:w-1/2">
+           <h2 class="display-font text-4xl md:text-5xl mb-6">Artificial Intelligence,<br>Natural Reflection.</h2>
+           <p class="text-lg opacity-70 leading-relaxed mb-8">
+             Stuck on a thought? Our <strong class="text-[hsl(var(--color-fg))]">on-device AI assistant</strong> gently nudges you with questions to deepen your reflection. It runs entirely on your computer—no data leaves your device.
+           </p>
+           <a href="app.html" class="text-[hsl(var(--color-accent))] font-medium hover:underline decoration-2 underline-offset-4 flex items-center gap-2">
+             Try the AI Demo in App 
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+           </a>
+        </div>
+        <div class="md:w-1/2 relative">
+           <div class="bg-[hsl(var(--color-fg))] text-white p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
+             <div class="absolute top-0 right-0 w-32 h-32 bg-[hsl(var(--color-accent))] blur-[60px] opacity-40"></div>
+             <div class="space-y-6 relative z-10">
+               <div class="bg-white/10 p-4 rounded-xl rounded-tl-none">
+                 <p class="text-sm opacity-80">I feel like I'm running in circles with my career...</p>
+               </div>
+               <div class="flex items-start gap-3">
+                 <div class="w-8 h-8 rounded-full bg-[hsl(var(--color-primary))] flex items-center justify-center text-xs">AI</div>
+                 <div class="bg-[hsl(var(--color-primary))] p-4 rounded-xl rounded-tr-none">
+                   <p class="text-sm">What is the one thing you are most afraid of losing if you stopped running?</p>
+                 </div>
+               </div>
+             </div>
+           </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Ticker / Quote -->
+  <section class="py-20 bg-[hsl(var(--color-primary))] text-white overflow-hidden whitespace-nowrap">
+    <div class="container-custom text-center">
+       <h3 class="display-font text-3xl md:text-5xl opacity-90">"Writing is the painting of the voice." — Voltaire</h3>
+    </div>
+  </section>
+
+  <!-- CTA Footer -->
+  <footer class="bg-[hsl(var(--color-fg))] text-white pt-24 pb-12">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+        <div class="max-w-md space-y-6">
+          <div class="flex items-center gap-2">
+            <img src="logo.svg" alt="Echo" class="w-8 h-8 invert">
+            <span class="display-font text-2xl">Echo</span>
+          </div>
+          <p class="opacity-60 text-lg">
+            Built for the thoughtful. Designed for peace. The journal that listens.
+          </p>
+        </div>
+        <div class="flex gap-16">
+          <div>
+            <h4 class="font-bold mb-4">Product</h4>
+            <ul class="space-y-2 opacity-60 text-sm">
+              <li><a href="app.html" class="hover:text-white transition-colors">Web App</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Manifesto</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Roadmap</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Legal</h4>
+            <ul class="space-y-2 opacity-60 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center opacity-40 text-sm">
+        <p>&copy; 2024 Echo Journal. All rights reserved.</p>
+        <p>Built with intention by <a href="https://teda.dev" class="underline hover:text-white">Teda.dev</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple Fade In on Scroll for Home
+    $(document).ready(function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
+            entry.target.classList.remove('opacity-0');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('section > div').forEach(el => {
+        el.classList.add('opacity-0');
+        observer.observe(el);
+      });
+    });
+  </script>
+  <script src="scripts/helpers.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
